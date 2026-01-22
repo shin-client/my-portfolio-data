@@ -24,8 +24,6 @@ def get_tiktok_stats():
         # Lưu ý: TikTok đổi cấu trúc HTML thường xuyên, regex này có thể cần cập nhật
         html = response.text
 
-        print(html)
-
         # Tìm kiếm chuỗi kiểu "followerCount":1234 họăc trong meta tag
         # Pattern này chỉ là ví dụ, cần inspect element thực tế trên tiktok để tinh chỉnh
         match = re.search(r'"followerCount":(\d+)', html)
