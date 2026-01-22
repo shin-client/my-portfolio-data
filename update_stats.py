@@ -53,8 +53,8 @@ def main():
             data = {}
 
         # Cập nhật số mới
-        data["tiktok_followers"] = followers
-        data["updated_at"] = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+        data["tiktokFollowers"] = followers
+        data["updatedAt"] = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
 
         # Lưu lại file
         with open("stats.json", "w") as f:
