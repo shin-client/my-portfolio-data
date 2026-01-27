@@ -26,12 +26,6 @@ jobs:
       - name: Run script
         run: python update_stats.py
 
-      - name: Keepalive Workflow
-        uses: gautamkrishnar/keepalive-workflow@v1
-        with:
-          committer_username: "github-actions[bot]"
-          committer_email: "github-actions[bot]@users.noreply.github.com"
-
       - name: Commit and Push if changed
         run: |
           git config --global user.name 'GitHub Action'
