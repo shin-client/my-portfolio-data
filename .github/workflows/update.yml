@@ -2,7 +2,7 @@ name: Update Stats
 
 on:
   schedule:
-    - cron: '0 0 * * *' # Chạy vào 00:00 mỗi ngày (UTC)
+    - cron: '23 0 * * *' # Chạy vào 00:00 mỗi ngày (UTC)
   workflow_dispatch: # Cho phép bấm nút chạy tay để test
 
 jobs:
@@ -25,6 +25,12 @@ jobs:
 
       - name: Run script
         run: python update_stats.py
+
+      - name: Keepalive Workflow
+        uses: gautamkrishnar/keepalive-workflow@v1
+        with:
+          committer_username: "github-actions[bot]"
+          committer_email: "github-actions[bot]@users.noreply.github.com"
 
       - name: Commit and Push if changed
         run: |
